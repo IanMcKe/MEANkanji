@@ -11,7 +11,7 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/kanji-test');
 var index = require('./routes/index');
 var adminApi = require('./routes/adminApi');
-// var answerApi = require('./routes/answerApi');
+var quizApi = require('./routes/quizApi');
 var auth = require('./routes/auth')(passport);
 
 var app = express();
@@ -39,7 +39,7 @@ initPassport(passport);
 
 app.use('/', index);
 app.use('/adminApi', adminApi);
-//app.use('/answerApi', answerApi);
+app.use('/quizApi', quizApi);
 app.use('/auth', auth);
 
 // catch 404 and forward to error handler
