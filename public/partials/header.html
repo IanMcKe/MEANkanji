@@ -1,0 +1,4 @@
+<h1 ng-show="vm.UserService.authenticated">Signed in as: {{ vm.UserService.current_user }}</h1>
+<p class="navbar-right navbar-text" ng-hide="vm.UserService.authenticated"><a ui-sref="login">Login</a> or <a ui-sref="register">Register</a></p>
+<p class="navbar-right navbar-text" ng-show="vm.UserService.authenticated"><a ui-sref="home" ng-click="vm.UserService.signout()">Logout</a></p>
+<button ui-sref="addQuestion" ng-if="vm.UserService.current_user == 'admin'">addQuestion</button>
