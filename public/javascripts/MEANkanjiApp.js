@@ -50,7 +50,7 @@ MEANkanji.config(function($stateProvider, $urlRouterProvider) {
       'body': {
         templateUrl: "../partials/addQuestion.html",
         controller: "QuestionController",
-        controllerAs: "vm"
+        controllerAs: 'vm'
       },
       'footer': {
         templateUrl: "../partials/footer.html"

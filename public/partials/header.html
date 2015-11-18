@@ -1,4 +1,4 @@
-<h1 ng-show="auth.UserService.authenticated">Signed in as: {{ auth.UserService.current_user }}</h1>
+<h6 ng-show="auth.UserService.authenticated">Signed in as: {{ auth.UserService.current_user }}</h6>
 <p class="navbar-right navbar-text" ng-hide="auth.UserService.authenticated"><a ui-sref="login">Login</a> or <a ui-sref="register">Register</a></p>
 <p class="navbar-right navbar-text" ng-show="auth.UserService.authenticated"><a ui-sref="home" ng-click="auth.UserService.signout()">Logout</a></p>
 <button ui-sref="addQuestion" ng-if="auth.UserService.current_user == 'admin'">addQuestion</button>
