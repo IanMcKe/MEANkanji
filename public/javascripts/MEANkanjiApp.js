@@ -7,10 +7,12 @@ MEANkanji.config(function($stateProvider, $urlRouterProvider) {
       'header': {
         templateUrl: "../partials/header.html",
         controller: 'AuthController',
-        controllerAs: 'vm'
+        controllerAs: 'auth'
       },
       'body': {
-        templateUrl: "../partials/main.html"
+        templateUrl: "../partials/main.html",
+        controller: 'MainController',
+        controllerAs: 'vm'
       },
       'footer': {
         templateUrl: "../partials/footer.html"
@@ -24,12 +26,12 @@ MEANkanji.config(function($stateProvider, $urlRouterProvider) {
       'header': {
         templateUrl: "../partials/header.html",
         controller: 'AuthController',
-        controllerAs: 'vm'
+        controllerAs: 'auth'
       },
       'body': {
         templateUrl: "../partials/login.html",
         controller: 'AuthController',
-        controllerAs: 'vm'
+        controllerAs: 'auth'
       },
       'footer': {
         templateUrl: "../partials/footer.html"
@@ -43,7 +45,7 @@ MEANkanji.config(function($stateProvider, $urlRouterProvider) {
       'header': {
         templateUrl: "../partials/header.html",
         controller: 'AuthController',
-        controllerAs: 'vm'
+        controllerAs: 'auth'
       },
       'body': {
         templateUrl: "../partials/addQuestion.html",

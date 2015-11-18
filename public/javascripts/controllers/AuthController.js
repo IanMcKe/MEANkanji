@@ -1,4 +1,4 @@
 MEANkanji.controller('AuthController', function AuthController(UserService) {
-  var vm = this;
-  vm.UserService = UserService;
+  var auth = this;
+  auth.UserService = UserService;
 });
