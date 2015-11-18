@@ -1,11 +1,11 @@
 <form ng-submit="vm.addQuestion()">
   <h4>Add a new question:</h4>
-  <input ng-model="vm.newQuestion.beforeAns" placeholder="text before answer">
-  <input ng-model="vm.newQuestion.answerKanji" placeholder="answer in kanji">
-  <input ng-model="vm.newQuestion.answerHira" placeholder="answer in hiragana">
-  <input ng-model="vm.newQuestion.afterAns" placeholder="text after answer">
-  <input ng-model="vm.newQuestion.level" placeholder="level">
-  <input ng-model="vm.newQuestion.ansTrans" placeholder="answer translation">
-  <input ng-model="vm.newQuestion.fullTrans" placeholder="sentence translation">
+  <input type="text" ng-model="vm.newQuestion.beforeAns" placeholder="text before answer">
+  <input type="text" ng-model="vm.newQuestion.answerKanji" placeholder="answer in kanji">
+  <input type="text" ng-model="vm.newQuestion.answerHira" placeholder="answer in hiragana">
+  <input type="text" ng-model="vm.newQuestion.afterAns" placeholder="text after answer">
+  <input type="text" ng-model="vm.newQuestion.level" placeholder="level">
+  <input type="text" ng-model="vm.newQuestion.ansTrans" placeholder="answer translation">
+  <input type="text" ng-model="vm.newQuestion.fullTrans" placeholder="sentence translation">
   <button type="submit">Submit</button>
 </form>

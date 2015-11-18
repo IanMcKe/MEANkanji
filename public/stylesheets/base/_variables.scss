@@ -1,6 +1,7 @@
 // Typography
-$base-font-family: $helvetica;
-$heading-font-family: $base-font-family;
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+$base-font-family: 'Roboto';
+$heading-font-family: 'Roboto';
 
 // Font Sizes
 $base-font-size: 1em;

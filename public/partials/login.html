@@ -1,7 +1,6 @@
 <form class="form-auth" ng-submit="auth.UserService.login()">
 	<h2>Log In</h2>
-	<p class="text-warning">{{error_message}}</p>
-	<input type="username" ng-model="auth.UserService.user.username" placeholder="Username" class="form-control"><br>
-	<input type="password" ng-model="auth.UserService.user.password" placeholder="Password" class="form-control"><br>
-	<input type="submit" value="Log in" class="btn btn-primary" />
+	<input type="text" ng-model="auth.UserService.user.username" placeholder="Username">
+	<input type="password" ng-model="auth.UserService.user.password" placeholder="Password">
+	<input type="submit" value="Log in">
 </form>
