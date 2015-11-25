@@ -1,6 +1,6 @@
 <h1>{{ vm.question.beforeAns }}<span style="color:red">{{ vm.question.answerKanji }}</span>{{ vm.question.afterAns }}</h1>
 <form ng-submit="vm.checkAnswer()">
-  <input type="text" ng-model="vm.userAns">
+  <input id="ime" type="text" ng-model="vm.userAns">
   <button type="submit">Check</button>
 </form>
 
@@ -8,3 +8,23 @@
 
 <h3 ng-show="vm.maru">Correct!</h3>
 <h3 ng-show="vm.batsu">Incorrect :(</h3>
+
+<script src="/lib/wanakana.min.js"></script>
+<script type="text/javascript">
+  (function(wk) {
+
+				///// IME Mode
+
+				var inputIME = document.getElementById('ime');
+
+				wk.bind(inputIME);
+
+				///// Non-IME mode
+
+				var inputTranslit = document.getElementById('ime');
+				function inputChangedTranslit (e) {
+					inputTranslit.innerHTML = (wk.toKana(inputTranslit.value));
+				}
+				inputTranslit.addEventListener('input', inputChangedTranslit);
+  })(window.wanakana);
+</script>
