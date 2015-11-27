@@ -1,4 +1,4 @@
-var MEANkanji = angular.module('MEANkanji', ['ui.router', 'ngResource']);
+var MEANkanji = angular.module('MEANkanji', ['ui.router', 'ngResource', 'ngMaterial']);
 
 MEANkanji.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider.state('home', {

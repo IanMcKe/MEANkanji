@@ -2,6 +2,16 @@
 @import "base/base";
 @import "neat/neat";
 
-h1 {
+section {
+  @include outer-container;
+}
+
+h1#question {
   font-size: 2em;
+  text-align: center;
+}
+
+form#answer {
+  @include shift(4);
+  @include span-columns(4);
 }

@@ -1,13 +1,19 @@
-<h1>{{ vm.question.beforeAns }}<span style="color:red">{{ vm.question.answerKanji }}</span>{{ vm.question.afterAns }}</h1>
-<form ng-submit="vm.checkAnswer()">
-  <input id="ime" type="text" ng-model="vm.userAns">
-  <button type="submit">Check</button>
-</form>
+<section>
+  <h1 id="question">{{ vm.question.beforeAns }}<span style="color:red">{{ vm.question.answerKanji }}</span>{{ vm.question.afterAns }}</h1>
+      <form id="answer" ng-submit="vm.checkAnswer()">
+          <md-input-container flex>
+            <label>Answer</label>
+            <input id="ime" type="text" ng-model="vm.userAns">
+          </md-input-container>
+          <md-button id="check" class="md-button" type="submit">Check!</md-button>
+          <md-button id="translation" class="md-button" type="button">English</md-button>
+      </form>
 
-<br>
+  <br>
 
-<h3 ng-show="vm.maru">Correct!</h3>
-<h3 ng-show="vm.batsu">Incorrect :(</h3>
+  <h3 ng-show="vm.maru">Correct!</h3>
+  <h3 ng-show="vm.batsu">Incorrect :(</h3>
+</section>
 
 <script src="/lib/wanakana.min.js"></script>
 <script type="text/javascript">
