@@ -45,6 +45,12 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
+div#header {
+  padding: 1.5em; }
+
+.header {
+  display: inline-block; }
+
 section {
   max-width: 68em;
   margin-left: auto;

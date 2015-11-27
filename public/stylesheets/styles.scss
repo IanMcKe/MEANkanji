@@ -2,6 +2,14 @@
 @import "base/base";
 @import "neat/neat";
 
+div#header {
+  padding: $base-spacing;
+}
+
+.header {
+  display: inline-block;
+}
+
 section {
   @include outer-container;
 }
