@@ -1,15 +1,40 @@
 <section>
   <h1 id="question">{{ vm.question.beforeAns }}<span style="color:red">{{ vm.question.answerKanji }}</span>{{ vm.question.afterAns }}</h1>
       <form id="answer" ng-submit="vm.checkAnswer()">
-          <md-input-container flex>
+          <md-input-container>
             <label>Answer</label>
             <input id="ime" type="text" ng-model="vm.userAns">
           </md-input-container>
+          <br>
           <md-button id="check" class="md-button" type="submit">Check!</md-button>
           <md-button id="translation" class="md-button" type="button">English</md-button>
+          <md-button id="previous" class="md-button" type="button" ng-click="previous = true">Previous</md-button>
+
+        <md-menu>
+          <md-button class="md-icon-button" ng-click="vm.openMenu($mdOpenMenu, $event)">
+            <i class="fa fa-cog"></i>
+          </md-button>
+          <md-menu-content width="4">
+            <!-- <md-menu-item>
+              <md-button disabled>
+                Require definitions
+              </md-button>
+            </md-menu-item>
+            <md-menu-divider></md-menu-divider> -->
+            <md-menu-item ng-repeat="item in vm.levels">
+              <md-button md-prevent-menu-close="md-prevent-menu-close">
+                <md-checkbox ng-checked="vm.exists(item, vm.selected)" ng-click="vm.toggle(item, vm.selected)" md-prevent-menu-close="md-prevent-menu-close">
+                    {{ item }}
+                </md-checkbox>
+              </md-button>
+            </md-menu-item>
+          </md-menu-content>
+        </md-menu>
       </form>
 
-  <br>
+  <h3 ng-show="previous">{{ vm.previous.answerKanji }}</h3>
+  <h3 ng-show="previous">{{ vm.previous.answerHira }}</h3>
+  <h3 ng-show="previous">{{ vm.previous.ansTrans }}</h3>
 
   <h3 ng-show="vm.maru">Correct!</h3>
   <h3 ng-show="vm.batsu">Incorrect :(</h3>

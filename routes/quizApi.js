@@ -3,7 +3,7 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var Question = mongoose.model('Question');
 
-function isGetOrPost (req, res, next){
+function isGet (req, res, next){
 
   //allow all get request methods for quizzes
   if(req.method === "GET") {
@@ -14,7 +14,7 @@ function isGetOrPost (req, res, next){
   return res.redirect('/#login');
 };
 
-router.use('/question', isGetOrPost)
+router.use('/question', isGet)
 
 router.route('/question')
   //gets one random question of a certain level
