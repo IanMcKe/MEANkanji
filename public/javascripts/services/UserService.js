@@ -12,6 +12,7 @@ MEANkanji.factory('UserService', function UserService($http, $state) {
       if(data.state == 'success'){
         factory.authenticated = true;
         factory.current_user = data.user.username;
+        factory.current_settings = data.user.settings;
         $state.go('home');
       } else {
         factory.error_message = data.message;
@@ -25,6 +26,7 @@ MEANkanji.factory('UserService', function UserService($http, $state) {
       if(data.state == 'success'){
         factory.authenticated = true;
         factory.current_user = data.user.username;
+        factory.current_settings = data.user.settings;
         $state.go('home');
       } else {
         factory.error_message = data.message;
@@ -39,19 +41,15 @@ MEANkanji.factory('UserService', function UserService($http, $state) {
     factory.current_user = '';
   };
 
-  // updates user settings
-  // factory.updateSettings = function() {
-  //   if(factory.authenticated === true && factory.current_user != ''){
-  //     $http.post('/quizApi/settings', factory.newSettings).success(function(data) {
-  //       if(data.state == 'success') {
-  //         factory.current_settings = data.user.settings;
-  //       } else {
-  //         factory.error_message = data.message;
-  //         console.log(factory.error_message);
-  //       }
-  //     });
-  //   }
-  // }
+  //updates user settings
+  factory.updateSettings = function() {
+    if(factory.authenticated === true && factory.current_user != ''){
+      $http.post('/settingsApi/settings', factory.newSettings).success(function() {
+        factory.current_settings = factory.newSettings;
+        // console.log(factory.current_settings);
+      });
+    }
+  }
 
   return factory;
 });

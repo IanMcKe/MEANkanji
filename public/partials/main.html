@@ -9,27 +9,6 @@
             <md-button id="translation" class="md-button" type="button">English</md-button>
             <md-button id="previous" class="md-button" type="button" ng-click="previous = true">Previous</md-button>
           </md-input-container>
-
-        <md-menu>
-          <md-button class="md-icon-button" ng-click="vm.openMenu($mdOpenMenu, $event)">
-            <i class="fa fa-cog"></i>
-          </md-button>
-          <md-menu-content width="4">
-            <!-- <md-menu-item>
-              <md-button disabled>
-                Require definitions
-              </md-button>
-            </md-menu-item>
-            <md-menu-divider></md-menu-divider> -->
-            <md-menu-item ng-repeat="item in vm.levels">
-              <md-button md-prevent-menu-close="md-prevent-menu-close">
-                <md-checkbox ng-checked="vm.exists(item, vm.selected)" ng-click="vm.toggle(item, vm.selected)" md-prevent-menu-close="md-prevent-menu-close">
-                    {{ item }}
-                </md-checkbox>
-              </md-button>
-            </md-menu-item>
-          </md-menu-content>
-        </md-menu>
       </form>
 
   <h3 ng-show="previous">{{ vm.previous.answerKanji }}</h3>

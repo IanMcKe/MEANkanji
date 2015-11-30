@@ -33,7 +33,7 @@ router.route('/question')
         if(err) {
           return res.send(500, err);
         }
-        console.log(req.query.selected);
+        // console.log(req.query.selected);
         return res.status(200).send(question);
       });
     });
