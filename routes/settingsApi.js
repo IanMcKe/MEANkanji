@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
-var Question = mongoose.model('Question');
+var User = mongoose.model('User');
 
 function isAuthenticated (req, res, next){
 
@@ -17,26 +17,27 @@ function isAuthenticated (req, res, next){
   return res.redirect('/#login');
 };
 
-router.use('/question', isAuthenticated)
+router.use('/settings', isAuthenticated)
 
-router.route('/question')
-  //gets one random question
-  .get(function(req, res){
-    Question.count().exec(function(err, count) {
+router.route('/settings')
+  .post(function(req, res){
+    //updates a user's settings
+    User.findOne({ 'username': req.user.username }, function(err, user) {
       if(err) {
-        return res.status(500).send(err);
+        res.send(err);
       }
 
-      var random = Math.floor(Math.random() * count);
+      // console.log(req.body.settings);
+      user.settings = req.body.settings;
 
-      Question.findOne().skip(random).exec(function(err, question) {
+      user.save(function(err, user){
         if(err) {
-          return res.send(500, err);
+          res.send(err);
         }
-        console.log(req.query.selected);
-        return res.status(200).send(question);
+
+        res.json(user);
       });
     });
-  })
+  });
 
 module.exports = router;

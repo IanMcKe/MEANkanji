@@ -15,6 +15,7 @@ var questionSchema = new mongoose.Schema({
 var userSchema = new mongoose.Schema({
   username: String,
   password: String, //hash created from password
+  settings: { type: Array, default: ["N3", "N4", "N5"] },
   created_at: {type: Date, default: Date.now}
 });
 
