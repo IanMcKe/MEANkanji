@@ -39,6 +39,25 @@ MEANkanji.config(function($stateProvider, $urlRouterProvider) {
     }
   });
 
+  $stateProvider.state('register', {
+    url: "/register",
+    views: {
+      'header': {
+        templateUrl: "../partials/header.html",
+        controller: 'AuthController',
+        controllerAs: 'auth'
+      },
+      'body': {
+        templateUrl: "../partials/register.html",
+        controller: 'AuthController',
+        controllerAs: 'auth'
+      },
+      'footer': {
+        templateUrl: "../partials/footer.html"
+      }
+    }
+  });
+
   $stateProvider.state('addQuestion', {
     url: "/addQuestion",
     views: {

@@ -9,6 +9,8 @@ MEANkanji.controller('MainController', function MainController(QuizService, User
   vm.userAns = null;
   vm.maru = null;
   vm.batsu = null;
+  vm.english = false;
+  vm.previous = false;
 
   vm.checkAnswer = function() {
     if(vm.userAns === vm.question.answerHira) {
@@ -19,11 +21,27 @@ MEANkanji.controller('MainController', function MainController(QuizService, User
       vm.batsu = true;
     }
     vm.userAns = null;
-    vm.previous = vm.question;
+    vm.lastQuestion = vm.question;
     if(UserService.current_user !== "") {
       vm.question = QuizService.get({ 'selected': UserService.current_settings });
     } else {
       vm.question = QuizService.get({ 'selected': ["N3","N4","N5"] });
+    }
+  };
+
+  vm.toggleEnglish = function() {
+    if(vm.english === false) {
+      vm.english = true;
+    } else {
+      vm.english = false;
+    }
+  };
+
+  vm.togglePrevious = function() {
+    if(vm.previous === false) {
+      vm.previous = true;
+    } else {
+      vm.previous = false;
     }
   };
 });

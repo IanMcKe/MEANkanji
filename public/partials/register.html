@@ -1,0 +1,14 @@
+<section>
+	<form class="form-auth" ng-submit="auth.UserService.register()">
+		<h1>Register</h1>
+		<md-input-container>
+			<label>Username</label>
+			<input type="text" ng-model="auth.UserService.user.username">
+		</md-input-container>
+		<md-input-container>
+			<label>Password</label>
+			<input type="password" ng-model="auth.UserService.user.password">
+		</md-input-container>
+		<md-button type="submit">Login</md-button>
+	</form>
+</section>

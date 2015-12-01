@@ -3,7 +3,21 @@
 @import "neat/neat";
 
 div#header {
+  @include outer-container(100%);
   padding: $base-spacing;
+
+  .header {
+    padding-top: .5em;
+  }
+}
+
+div#user-info {
+  @include span-columns(11);
+}
+
+div#settings-menu {
+  @include span-columns(1);
+  padding-right: 1em;
 }
 
 .header {
@@ -14,9 +28,20 @@ section {
   @include outer-container;
 }
 
+section#main {
+  padding-top: 1.5em;
+}
+
 h1#question {
   font-size: 2em;
   text-align: center;
+  @include padding($base-spacing $base-spacing 0 $base-spacing);
+}
+
+h4#english {
+  font-size: 1em;
+  text-align: center;
+  @include padding(0 $base-spacing 0 $base-spacing);
 }
 
 form#answer {
