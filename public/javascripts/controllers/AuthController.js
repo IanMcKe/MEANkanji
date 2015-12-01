@@ -21,6 +21,7 @@ MEANkanji.controller('AuthController', function AuthController(UserService) {
     }
     auth.UserService.current_settings = list;
     auth.UserService.newSettings = { settings: list };
+    //should refactor to call UserService.updateSettings on menu closure not on toggling a checkbox
     auth.UserService.updateSettings();
   };
   auth.exists = function (item, list) {

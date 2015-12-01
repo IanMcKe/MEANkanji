@@ -44,10 +44,10 @@ MEANkanji.factory('UserService', function UserService($http, $state) {
   //updates user settings
   factory.updateSettings = function() {
     if(factory.authenticated === true && factory.current_user != ''){
-      $http.post('/settingsApi/settings', factory.newSettings).success(function() {
-        factory.current_settings = factory.newSettings;
+      $http.post('/settingsApi/settings', factory.newSettings);//.success(function() {
+        // factory.current_settings = factory.newSettings;
         // console.log(factory.current_settings);
-      });
+      //});
     }
   }
 

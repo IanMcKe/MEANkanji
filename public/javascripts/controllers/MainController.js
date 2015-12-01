@@ -20,7 +20,7 @@ MEANkanji.controller('MainController', function MainController(QuizService, User
     }
     vm.userAns = null;
     vm.previous = vm.question;
-    if(UserService.current_user.username !== "") {
+    if(UserService.current_user !== "") {
       vm.question = QuizService.get({ 'selected': UserService.current_settings });
     } else {
       vm.question = QuizService.get({ 'selected': ["N3","N4","N5"] });
