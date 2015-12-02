@@ -1,6 +1,6 @@
 <section id="main">
   <h1 id="question">{{ vm.question.beforeAns }}<span style="color:red">{{ vm.question.answerKanji }}</span>{{ vm.question.afterAns }}</h1>
-  <h4 id="english" ng-show="vm.english">{{ vm.question.fullTrans }}</h4>
+  <h4 id="english" ng-show="vm.english" class="animated">{{ vm.question.fullTrans }}</h4>
       <form id="answer" ng-submit="vm.checkAnswer()">
           <md-input-container>
             <label>Answer</label>
@@ -8,16 +8,18 @@
             <br>
             <md-button id="check" class="md-button" type="submit">Check!</md-button>
             <md-button id="translation" class="md-button" type="button" ng-click="vm.toggleEnglish()">English</md-button>
-            <md-button id="previous" class="md-button" type="button" ng-click="vm.togglePrevious()">Previous</md-button>
+            <md-button id="last-question" class="md-button" type="button" ng-click="vm.togglePrevious()">Previous</md-button>
           </md-input-container>
       </form>
-
-  <h3 ng-show="vm.previous">{{ vm.lastQuestion.answerKanji }}</h3>
-  <h3 ng-show="vm.previous">{{ vm.lastQuestion.answerHira }}</h3>
-  <h3 ng-show="vm.previous">{{ vm.lastQuestion.ansTrans }}</h3>
-
-  <h3 ng-show="vm.maru">Correct!</h3>
-  <h3 ng-show="vm.batsu">Incorrect :(</h3>
+</section>
+<section>
+  <div id="previous" class="animated">
+    <h3 ng-show="vm.previous">{{ vm.lastQuestion.answerKanji }}</h3>
+    <h3 ng-show="vm.previous">{{ vm.lastQuestion.answerHira }}</h3>
+    <h3 ng-show="vm.previous">{{ vm.lastQuestion.level }}</h3>
+    <h3 ng-show="vm.previous">{{ vm.lastQuestion.ansTrans }}</h3>
+    <h3 ng-show="vm.previous"><span ng-show="vm.lastUserAns">You entered:</span> {{ vm.lastUserAns }}</h3>
+  </div>
 </section>
 
 <script src="/lib/wanakana.min.js"></script>

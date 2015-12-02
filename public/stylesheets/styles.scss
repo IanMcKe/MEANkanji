@@ -26,6 +26,10 @@ div#settings-menu {
 
 section {
   @include outer-container;
+
+  .sm-column {
+    @include span-columns(5);
+  }
 }
 
 section#main {
@@ -44,7 +48,18 @@ h4#english {
   @include padding(0 $base-spacing 0 $base-spacing);
 }
 
+h4#error-message {
+  font-size: 1em;
+  color: $medium-gray;
+  @include padding(0 0 0.5em 0);
+}
+
 form#answer {
+  @include shift(4);
+  @include span-columns(5);
+}
+
+div#previous {
   @include shift(4);
   @include span-columns(5);
 }

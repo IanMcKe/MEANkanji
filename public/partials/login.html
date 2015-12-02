@@ -1,14 +1,17 @@
 <section>
-	<form class="form-auth" ng-submit="auth.UserService.login()">
+	<div class="sm-column">
 		<h1>Login</h1>
-		<md-input-container>
-			<label>Username</label>
-			<input type="text" ng-model="auth.UserService.user.username">
-		</md-input-container>
-		<md-input-container>
-			<label>Password</label>
-			<input type="password" ng-model="auth.UserService.user.password">
-		</md-input-container>
-		<md-button type="submit">Login</md-button>
-	</form>
+		<h4 id="error-message" ng-show="auth.UserService.error_message">{{ auth.UserService.error_message }}</h4>
+		<form class="form-auth" ng-submit="auth.UserService.login()">
+			<md-input-container class="md-block">
+				<label>Username</label>
+				<input type="text" ng-model="auth.UserService.user.username">
+			</md-input-container>
+			<md-input-container class="md-block">
+				<label>Password</label>
+				<input type="password" ng-model="auth.UserService.user.password">
+			</md-input-container>
+			<md-button type="submit" class="md-button">Login</md-button>
+		</form>
+	</div>
 </section>

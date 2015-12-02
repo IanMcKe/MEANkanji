@@ -85,6 +85,13 @@ section {
     clear: both;
     content: "";
     display: table; }
+  section .sm-column {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 40.29137%; }
+    section .sm-column:last-child {
+      margin-right: 0; }
 
 section#main {
   padding-top: 1.5em; }
@@ -99,6 +106,11 @@ h4#english {
   text-align: center;
   padding: 0 1.5em; }
 
+h4#error-message {
+  font-size: 1em;
+  color: #999;
+  padding: 0 0 0.5em; }
+
 form#answer {
   margin-left: 34.11922%;
   float: left;
@@ -106,6 +118,15 @@ form#answer {
   margin-right: 2.35765%;
   width: 40.29137%; }
   form#answer:last-child {
+    margin-right: 0; }
+
+div#previous {
+  margin-left: 34.11922%;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 40.29137%; }
+  div#previous:last-child {
     margin-right: 0; }
 
 /*# sourceMappingURL=styles.css.map */
