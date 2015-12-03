@@ -2,6 +2,7 @@
 @import "base/base";
 @import "neat/neat";
 
+//header
 div#header {
   @include outer-container(100%);
   padding: $base-spacing;
@@ -23,7 +24,9 @@ div#settings-menu {
 .header {
   display: inline-block;
 }
+/////
 
+//body
 section {
   @include outer-container;
 
@@ -62,4 +65,28 @@ form#answer {
 div#previous {
   @include shift(4);
   @include span-columns(5);
+
+  #lastKanji {
+    font-size: 1.5em;
+  }
+
+  #lastHira {
+    font-size: 1.5em;
+  }
+
+  #lastLevel {
+    font-size: 0.8em;
+  }
+
+  #lastTranslation {
+    font-size: 1em;
+  }
+
+  #lastAnswer {
+    span {
+      font-size: 0.75em;
+    }
+    font-size: 1em;
+  }
 }
+/////

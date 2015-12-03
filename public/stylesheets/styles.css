@@ -128,5 +128,17 @@ div#previous {
   width: 40.29137%; }
   div#previous:last-child {
     margin-right: 0; }
+  div#previous #lastKanji {
+    font-size: 1.5em; }
+  div#previous #lastHira {
+    font-size: 1.5em; }
+  div#previous #lastLevel {
+    font-size: 0.8em; }
+  div#previous #lastTranslation {
+    font-size: 1em; }
+  div#previous #lastAnswer {
+    font-size: 1em; }
+    div#previous #lastAnswer span {
+      font-size: 0.75em; }
 
 /*# sourceMappingURL=styles.css.map */

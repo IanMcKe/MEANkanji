@@ -1,4 +1,4 @@
-MEANkanji.controller('MainController', function MainController(QuizService, UserService, $mdToast) {
+MEANkanji.controller('MainController', function MainController(QuizService, UserService, $mdToast, $document) {
   //grabbing a question and checking a user's answer
   var vm = this;
   if(UserService.current_user !== "") {
@@ -26,7 +26,7 @@ MEANkanji.controller('MainController', function MainController(QuizService, User
     vm.lastQuestion = vm.question;
     vm.lastUserAns = vm.userAns;
     vm.userAns = null;
-    vm.showSimpleToast();
+    vm.showToast();
     if(UserService.current_user !== "") {
       vm.question = QuizService.get({ 'selected': UserService.current_settings });
     } else {
@@ -52,6 +52,7 @@ MEANkanji.controller('MainController', function MainController(QuizService, User
     }
   };
 
+  //since I'm just using fade-ins and outs here it's much cleaner to use jQuery vs animate.css
   // vm.togglePrevious = function() {
   //   if(vm.previous === false) {
   //     if(angular.element(document.querySelector('#previous')).hasClass('fadeOut')) {
@@ -100,21 +101,21 @@ MEANkanji.controller('MainController', function MainController(QuizService, User
     if ( current.left && last.right ) current.right = false;
     last = angular.extend({},current);
   };
-  vm.showSimpleToast = function() {
+  vm.showToast = function() {
     if(vm.maru) {
-      $mdToast.show(
-        $mdToast.simple()
-          .textContent('正解　Correct!')
-          .position(vm.getToastPosition())
-          .hideDelay(3000)
-      );
+      $mdToast.show({
+        templateUrl: './partials/toast-correct.html',
+        parent: $document[0].querySelector('#toastBounds'),
+        hideDelay: 3000,
+        position: vm.getToastPosition()
+      });
     } else {
-      $mdToast.show(
-        $mdToast.simple()
-          .textContent('✖　Incorrect')
-          .position(vm.getToastPosition())
-          .hideDelay(3000)
-      );
+      $mdToast.show({
+        templateUrl: './partials/toast-incorrect.html',
+        parent: $document[0].querySelector('#toastBounds'),
+        hideDelay: 3000,
+        position: vm.getToastPosition()
+      });
     }
   };
 });

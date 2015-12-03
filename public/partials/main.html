@@ -14,11 +14,15 @@
 </section>
 <section>
   <div id="previous" class="animated">
-    <h3 ng-show="vm.previous">{{ vm.lastQuestion.answerKanji }}</h3>
-    <h3 ng-show="vm.previous">{{ vm.lastQuestion.answerHira }}</h3>
-    <h3 ng-show="vm.previous">{{ vm.lastQuestion.level }}</h3>
-    <h3 ng-show="vm.previous">{{ vm.lastQuestion.ansTrans }}</h3>
-    <h3 ng-show="vm.previous"><span ng-show="vm.lastUserAns">You entered:</span> {{ vm.lastUserAns }}</h3>
+    <span id="lastJapanese">
+      <h3 id="lastKanji" ng-show="vm.previous">{{ vm.lastQuestion.answerKanji }}</h3>
+      <h3 id="lastHira" ng-show="vm.previous">{{ vm.lastQuestion.answerHira }}</h3>
+      <h3 id="lastLevel" ng-show="vm.previous">{{ vm.lastQuestion.level }}</h3>
+    </span>
+    <span id="lastEnglish">
+      <h3 id="lastTrans" ng-show="vm.previous">{{ vm.lastQuestion.ansTrans }}</h3>
+      <h3 id="lastAnswer" ng-show="vm.previous"><span ng-show="vm.lastUserAns">You entered:</span> {{ vm.lastUserAns }}</h3>
+    </span>
   </div>
 </section>
 
