@@ -5,6 +5,7 @@ var questionSchema = new mongoose.Schema({
   beforeAns: {type: String, default: ''},
   answerKanji: String,
   answerHira: String,
+  answerRoma: String,
   afterAns: {type: String, default: ''},
   level: String,
   ansTrans: String,

@@ -1,11 +1,30 @@
-<form ng-submit="vm.addQuestion()">
-  <h4>Add a new question:</h4>
-  <input type="text" ng-model="vm.newQuestion.beforeAns" placeholder="text before answer">
-  <input type="text" ng-model="vm.newQuestion.answerKanji" placeholder="answer in kanji">
-  <input type="text" ng-model="vm.newQuestion.answerHira" placeholder="answer in hiragana">
-  <input type="text" ng-model="vm.newQuestion.afterAns" placeholder="text after answer">
-  <input type="text" ng-model="vm.newQuestion.level" placeholder="level">
-  <input type="text" ng-model="vm.newQuestion.ansTrans" placeholder="answer translation">
-  <input type="text" ng-model="vm.newQuestion.fullTrans" placeholder="sentence translation">
-  <button type="submit">Submit</button>
-</form>
+<section>
+  <form ng-submit="vm.addQuestion()">
+    <h4>Add a new question:</h4>
+    <md-input-container class="md-block">
+      <input type="text" ng-model="vm.newQuestion.beforeAns" placeholder="text before answer">
+    </md-input-container>
+    <md-input-container class="md-block">
+      <input type="text" ng-model="vm.newQuestion.answerKanji" placeholder="answer in kanji">
+    </md-input-container>
+    <md-input-container class="md-block">
+      <input type="text" ng-model="vm.newQuestion.answerHira" placeholder="answer in hiragana">
+    </md-input-container>
+    <md-input-container class="md-block">
+      <input type="text" ng-model="vm.newQuestion.answerRoma" placeholder="answer in romaji">
+    </md-input-container>
+    <md-input-container class="md-block">
+      <input type="text" ng-model="vm.newQuestion.afterAns" placeholder="text after answer">
+    </md-input-container>
+    <md-input-container class="md-block">
+      <input type="text" ng-model="vm.newQuestion.level" placeholder="level">
+    </md-input-container>
+    <md-input-container class="md-block">
+      <input type="text" ng-model="vm.newQuestion.ansTrans" placeholder="answer translation">
+    </md-input-container>
+    <md-input-container class="md-block">
+      <input type="text" ng-model="vm.newQuestion.fullTrans" placeholder="sentence translation">
+    </md-input-container>
+    <button type="submit">Submit</button>
+  </form>
+<section>
