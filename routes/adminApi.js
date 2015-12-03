@@ -35,6 +35,7 @@ router.route('/questionCRUD')
     question.beforeAns = req.body.beforeAns;
     question.answerKanji = req.body.answerKanji;
     question.answerHira = req.body.answerHira;
+    question.answerRoma = req.body.answerRoma;
     question.afterAns = req.body.afterAns;
     question.level = req.body.level;
     question.ansTrans = req.body.ansTrans;
