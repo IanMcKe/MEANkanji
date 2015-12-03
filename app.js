@@ -8,7 +8,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 require('./models/models.js');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/kanji-test');
+mongoose.connect('mongodb://***REMOVED***');
 var index = require('./routes/index');
 var adminApi = require('./routes/adminApi');
 var quizApi = require('./routes/quizApi');
