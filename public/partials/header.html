@@ -2,8 +2,6 @@
   <div id="user-info">
     <h6 class="header" ng-show="auth.UserService.authenticated">{{ auth.UserService.current_user }}</h6>
     <p class="header" class="navbar-right navbar-text" ng-hide="auth.UserService.authenticated"><a ui-sref="login">Login</a> or <a ui-sref="register">Signup</a></p>
-    <p class="header" class="navbar-right navbar-text" ng-show="auth.UserService.authenticated"><a ui-sref="home" ng-click="auth.UserService.signout()">Logout</a></p>
-    <button class="header" ui-sref="addQuestion" ng-if="auth.UserService.current_user == 'admin'">addQuestion</button>
   </div>
   <div id="settings-menu">
     <md-menu ng-show="auth.UserService.authenticated" md-position-mode="target-right target">
@@ -11,12 +9,15 @@
         <i class="fa fa-cog"></i>
       </md-button>
       <md-menu-content width="3">
-        <!-- <md-menu-item>
-          <md-button disabled>
-            Require definitions
+        <md-menu-item ng-if="auth.UserService.current_user == 'admin'">
+          <md-button ui-sref="addQuestion">addQuestion</md-button>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button aria-label="signout" ng-click="auth.UserService.signout()">
+            Signout
           </md-button>
         </md-menu-item>
-        <md-menu-divider></md-menu-divider> -->
+        <md-menu-divider></md-menu-divider>
         <md-menu-item ng-repeat="item in auth.levels">
           <md-button aria-label="{{ item }}" md-prevent-menu-close="md-prevent-menu-close">
             <md-checkbox ng-checked="auth.exists(item, auth.selected)" ng-click="auth.toggle(item, auth.selected)" md-prevent-menu-close="md-prevent-menu-close">
