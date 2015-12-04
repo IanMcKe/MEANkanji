@@ -34,7 +34,7 @@ section {
 
 }
 
-.sm-column {
+.sm-div {
   @include media($mobile) {
     @include shift(4);
   }
