@@ -85,13 +85,17 @@ section {
     clear: both;
     content: "";
     display: table; }
-  section .sm-column {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 40.29137%; }
-    section .sm-column:last-child {
-      margin-right: 0; }
+
+.sm-div {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 40.29137%; }
+  @media screen and (max-width: 500px) {
+    .sm-div {
+      margin-left: 34.11922%; } }
+  .sm-div:last-child {
+    margin-right: 0; }
 
 section#main {
   padding-top: 1.5em; }
@@ -132,6 +136,8 @@ div#previous {
     font-size: 1.5em; }
   div#previous #lastHira {
     font-size: 1.5em; }
+  div#previous #lastRoma {
+    font-size: 0.8em; }
   div#previous #lastLevel {
     font-size: 0.8em; }
   div#previous #lastTranslation {
