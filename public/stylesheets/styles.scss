@@ -32,12 +32,13 @@ div#settings-menu {
 section {
   @include outer-container;
 
-  .sm-column {
-    @include span-columns(5);
-    @include media($mobile) {
-      @include shift(4);
-    }
+}
+
+.sm-column {
+  @include media($mobile) {
+    @include shift(4);
   }
+  @include span-columns(5);
 }
 
 section#main {
