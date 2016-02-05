@@ -38,13 +38,13 @@ router.route('/question')
         });
       });
     } else {
-      Question.count().exec(function(err, count) {
+      Question.where('level').in(['N1','N2','N3','N4','N5','Hiragana','Katakana']).count().exec(function(err, count) {
         if(err) {
           return res.status(500).send(err);
         }
         var random = Math.floor(Math.random() * count);
 
-        Question.findOne().skip(random).exec(function(err, question) {
+        Question.where('level').in(['N1','N2','N3','N4','N5','Hiragana','Katakana']).findOne().skip(random).exec(function(err, question) {
           if(err) {
             return res.send(500, err);
           }
