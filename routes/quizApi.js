@@ -39,6 +39,7 @@ router.route('/question')
         });
       });
     } else {
+        console.log(req.query.selected);
       Question.count().exec(function(err, count) {
         if(err) {
           return res.status(500).send(err);
