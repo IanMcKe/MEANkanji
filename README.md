@@ -1,5 +1,5 @@
 # A simple kanji app built using a MEAN stack
-##### The website will select one question at a time (at random) from its database.  The user's goal is to correctly input the reading of the kanji in hiragana.  It features a simple login system that doesn't require an email, only a distinct username.  It's also been developed with mobile in mind, so feel free to try it out on your phone!
+##### The website will select one question at a time (at random) from its database.  The user's goal is to correctly input the reading of the kanji written in red in hiragana.  It features a simple login system that doesn't require an email, only a distinct username.  It's also been developed with mobile in mind, so feel free to try it out on your phone!
 
 ##### Live version [here](https://meankanji.herokuapp.com)
 
