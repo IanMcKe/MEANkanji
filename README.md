@@ -10,7 +10,7 @@
 * Clone the project repository using the link provided on Github
 * Run `npm install` to install dependencies.
 * Set up an instance of MongoDB ([Mac](https://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/), [Windows](https://docs.mongodb.org/manual/tutorial/install-mongodb-on-windows/), [Ubuntu](https://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/)) on your machine.  (Make sure it says something about 'awaiting connections' in your shell)
-* Change line 11 of app.js to match the port which your MongoDB instance is awaiting connections (currently it is set to the default Windows port).  Also feel free to edit the database name from kanji-test to whatever you want your database to be called.
+* Change line 11 of app.js to match the port which your MongoDB instance is awaiting connections (currently it is set to the default port).  Also feel free to edit the database name from kanji-test to whatever you want your database to be called.
 * Run `npm start`
 * Go to localhost:3000 in your browser.
 

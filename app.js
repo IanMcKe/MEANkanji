@@ -8,7 +8,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 require('./models/models.js');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/kanji-test');
+mongoose.connect('mongodb://***REMOVED***');
 var index = require('./routes/index');
 var adminApi = require('./routes/adminApi');
 var quizApi = require('./routes/quizApi');
@@ -23,6 +23,12 @@ app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
+app.use('/angular', express.static(__dirname + '/node_modules/angular/'));
+app.use('/angular-ui-router', express.static(__dirname + '/node_modules/angular-ui-router/build/'));
+app.use('/angular-resource', express.static(__dirname + '/node_modules/angular-resource/'));
+app.use('/angular-aria', express.static(__dirname + '/node_modules/angular-aria/'));
+app.use('/angular-animate', express.static(__dirname + '/node_modules/angular-animate/'));
 
 app.use(logger('dev'));
 app.use(session({
