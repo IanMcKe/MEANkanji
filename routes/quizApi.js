@@ -22,7 +22,7 @@ router.use('/question', isAuthenticated)
 router.route('/question')
   //gets one random question
   .get(function(req, res){
-    if(req.query.selected.length() <= 0) {
+    if(req.query.selected != []) {
       Question.where('level').in(req.query.selected).count().exec(function(err, count) {
         if(err) {
           return res.status(500).send(err);
