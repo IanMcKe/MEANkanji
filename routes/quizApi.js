@@ -46,7 +46,7 @@ router.route('/question')
 
         Question.findOne().skip(random).exec(function(err, question) {
           if(err) {
-            return res.send(500, err);
+            return res.send(500, count);
           }
           // console.log(req.query.selected);
           return res.status(200).send(question);
