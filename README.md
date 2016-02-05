@@ -16,7 +16,7 @@
 
 ## Technologies Used
 
-HTML, CSS, Sass, Bourbon, Neat, MongoDB, Express, AngularJS, Angular Material, NodeJS, PassportJS
+HTML, CSS, Animate CSS, jQuery, Sass, Bourbon, Neat, MongoDB, Express, AngularJS, Angular Material, NodeJS, PassportJS
 (Note: the angular-material.css file is customized to have all text-transform properties set to none instead of uppercase)
 
 ### Copyright (c)
