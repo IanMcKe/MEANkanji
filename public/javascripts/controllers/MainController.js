@@ -1,7 +1,7 @@
 MEANkanji.controller('MainController', function MainController(QuizService, UserService, $mdToast, $document) {
   //grabbing a question and checking a user's answer
   var vm = this;
-  if(UserService.current_user !== "") {
+  if(UserService.current_user !== "" && UserService.current_settings.length > 0) {
     vm.question = QuizService.get({ 'selected': UserService.current_settings });
 
   } else {
@@ -27,7 +27,7 @@ MEANkanji.controller('MainController', function MainController(QuizService, User
     vm.lastUserAns = vm.userAns;
     vm.userAns = null;
     vm.showToast();
-    if(UserService.current_user !== "") {
+    if(UserService.current_user !== "" && UserService.current_settings.length > 0) {
       vm.question = QuizService.get({ 'selected': UserService.current_settings });
     } else {
       vm.question = QuizService.get({ 'selected': ["N3","N4","N5"] });

@@ -40,13 +40,13 @@ router.route('/question')
     } else {
       Question.count().exec(function(err, count) {
         if(err) {
-          return res.status(500).send(count);
+          return res.status(500).send(err);
         }
         var random = Math.floor(Math.random() * count);
 
         Question.findOne().skip(random).exec(function(err, question) {
           if(err) {
-            return res.send(500, count);
+            return res.send(500, err);
           }
           // console.log(req.query.selected);
           return res.status(200).send(question);
