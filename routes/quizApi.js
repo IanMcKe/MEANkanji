@@ -22,7 +22,6 @@ router.use('/question', isAuthenticated)
 router.route('/question')
   //gets one random question
   .get(function(req, res){
-    if(req.query.selected.length > 0) {
       Question.where('level').in(req.query.selected).count().exec(function(err, count) {
         if(err) {
           return res.status(500).send(err);
@@ -37,22 +36,6 @@ router.route('/question')
           return res.status(200).send(question);
         });
       });
-    } else {
-      Question.count().exec(function(err, count) {
-        if(err) {
-          return res.status(500).send(err);
-        }
-        var random = Math.floor(Math.random() * count);
-
-        Question.findOne().skip(random).exec(function(err, question) {
-          if(err) {
-            return res.send(500, err);
-          }
-          // console.log(req.query.selected);
-          return res.status(200).send(question);
-        });
-      });
-    }
   })
 
 module.exports = router;
